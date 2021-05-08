@@ -1,0 +1,35 @@
+server.port: 7000
+server:
+  error:
+    include-message: always
+
+logging:
+  level:
+    root: INFO
+    com.kenny: DEBUG
+
+app:
+  product-service:
+    host: localhost
+    port: 7003
+  recommendation-service:
+    host: localhost
+    port: 7005
+  review-service:
+    host: localhost
+    port: 7004
+
+---
+spring.profiles: docker
+server.port: 8080
+
+app:
+  product-service:
+    host: product
+    port: 8080
+  recommendation-service:
+    host: recommendation
+    port: 8080
+  review-service:
+    host: review
+    port: 8080
